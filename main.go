@@ -8,11 +8,11 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
-var err error
 var discord *discordgo.Session
 
 func init() {
-	discord, err := discordgo.New("Bot " + os.Getenv("DISCORD_BOT_TOKEN"))
+	var err error
+	discord, err = discordgo.New("Bot " + os.Getenv("DISCORD_BOT_TOKEN"))
 	if err != nil {
 		log.Fatalf("Invalid bot parameters: %v", err)
 	}
